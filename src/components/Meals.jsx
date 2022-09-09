@@ -1,6 +1,7 @@
 import React , {useContext} from 'react'
 import { useGlobalContext } from '../context';
 import { BsHandThumbsUp } from 'react-icons/bs';
+import {BsStar} from 'react-icons/bs'
 
 const Meals = () => {
 const {meals,isLoading,selectMeal,addToFavorites,removeFromFavorites} =useGlobalContext();
@@ -29,8 +30,8 @@ if(meals.length<1)
                             }} className='img'  />
                         <footer>
                             <h5>{title}</h5>
-                            <button className='like-btn' onClick={()=>{
-                                addToFavorites(idMeal)}}><BsHandThumbsUp /></button>
+                            <button className='like-btn' title='add to fav' onClick={()=>{
+                                addToFavorites(idMeal)}}><BsStar /></button>
                         </footer>
                     </article>
                 )
